@@ -40,7 +40,7 @@ public class PlayerControl : MonoBehaviour
         vel.x = Input.GetAxis("Horizontal") * speed;
 
         vel = transform.TransformDirection(vel);
-        playerControl.Move(vel * Time.deltaTime);
+        playerControl.SimpleMove(vel);
         transform.Rotate(0, Input.GetAxis("Mouse X") * lookSensitivity, 0);
         xRotation -= Input.GetAxis("Mouse Y") * lookSensitivity;
         xRotation = Mathf.Clamp(xRotation, -upRotation, downRotation);
